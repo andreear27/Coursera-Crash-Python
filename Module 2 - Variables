@@ -1,0 +1,37 @@
+#ex1: gaseste media numerelor + transforma int in str folosind functia de conversie a tipului de data str()
+
+total = 2048 + 4357 + 97658 + 125 + 8
+files = 5
+average = total / files
+print("The average size is: " + str(average))
+
+"""Implicit conversion is where the interpreter helps us out and automatically converts one data type into another, without having to explicitly tell it to do so."""
+
+
+#ex2: take two numbers, divide one by another so that the
+
+result is equal to 1, and display the result on the screen
+numerator = 10
+denominator = 10
+result = numerator / denominator
+print(result)
+
+#ex3: Combine the variables to display the sentence "How do you like Python so far?" 
+word1 = "How"
+word2 = "do"
+word3 = "you"
+word4 = "like"
+word5 = "Python"
+word6 = "so"
+word7 = "far?"
+print(word1, word2, word3, word4, word5, word6, word7)
+
+#ex4: correct the code so it prints 2+2 = 4 --> usage of str() conversion function 
+print("2 + 2 = " + str(2 + 2))
+
+#ex5: Flesh out the body of the print_seconds function so that it prints the total amount of seconds given the hours, minutes, and seconds function parameters.
+def print_seconds(hours, minutes, seconds):
+    total_seconds=hours*3600+minutes*60+seconds
+    print(total_seconds )
+print_seconds(1,2,3)
+
