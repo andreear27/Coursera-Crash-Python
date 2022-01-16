@@ -8,7 +8,9 @@ sum = area_a + area_b
 print("The sum of both areas is: "str(sum)) 
 
 
-#Use the get_seconds function to work out the amount of seconds in 2 hours and 30 minutes, then add this number to the amount of seconds in 45 minutes and 15 seconds. Then print the result.
+'''Use the get_seconds function to work out the amount of seconds in 2 hours and 30 minutes, 
+then add this number to the amount of seconds in 45 minutes and 15 seconds. Then print the result.'''
+
 def get_seconds(hours, minutes, seconds):
   return 3600*hours + 60*minutes + seconds
 
@@ -16,4 +18,129 @@ amount_a = get_seconds(2,30,0)
 amount_b = get_seconds(0,45,15)
 result = amount_a + amount_b
 print(result)
+
+'''NOTE!Functions can even return multiple values. Just don't forget to store all returned values in variables! 
+You could also have a function return nothing, in which case the function simply exits.'''
+
+#find the lucky number = learn how to avoid code duplicate
+#  !!! ex 1 - code is duplicated: 
+
+name="Kay"
+number = len(name) * 9
+
+print("Hello" + name + "!. Your luck number is " str(number))
+
+name="Cameron"
+number = len(name) * 9 
+
+print("Hello" + name + "!. Your lucky number is " str(number))
+
+# !!! ex 2 - avoid code duplication by using function
+
+def lucky_number(name):                # keyword function + nume function + function argument 
+ number = len(name) * 9                # variabila definita in cadrul functiei: nume variabila = python functie to find lenght of a string (argumentul functiei) * multiplied by 9 
+ print("Hello" + name + "!. Your lucky number is " str(number))   # print function 
+ 
+lucky_number("Kay")
+lucy_number("Cameron")                  # call the function twice, each time 4 a different name = this way we don't write the same print function repeateadly 
+
+# ex 3 - practice 
+
+# REPLACE THIS STARTER CODE WITH YOUR FUNCTION
+''' june_days = 30
+print("June has " + str(june_days) + " days.")
+july_days = 31
+print("July has " + str(july_days) + " days.") '''
+
+
+#This defines the function; it receives month and days as its parameters
+def month_days(month,days):
+ print(month + " has " + str(days) + " days.")
+#This prints the required output: function arg month + has string + function str (argument days) + str days 
+
+# June function call
+month_days("June","30")
+#July function call 
+month_days("July","31")
+
+
+# Principles of Code Syle - write self documenting code 
+
+'''This function to calculate the area of a rectangle is not very readable. Can you refactor it, and then call the function to calculate the area with base of 5 and height of 6?
+Tip: a function that calculates the area of a rectangle should probably be called rectangle_area, and if it's receiving base and height, that's what the parameters should be called.'''
+
+def f1(x, y):
+	z = x*y  # the area is base*height
+	print("The area is " + str(z))
+
+# my code:
+def rectangle_area(base, height):
+	area = base * height
+	print ("The area is " + str(area))
+
+rectangle_area(5,6)
+
+  
+  '''This function converts miles to kilometers (km).
+
+    Complete the function to return the result of the conversion
+
+    Call the function to convert the trip distance from miles to kilometers
+
+    Fill in the blank to print the result of the conversion
+
+    Calculate the round-trip in kilometers by doubling the result, and fill in the blank to print the result'''
+    
+    # 1) Complete the function to return the result of the conversion
+def convert_distance(miles):
+	km = miles * 1.6  # approximately 1.6 km in 1 mile
+	return km
+my_trip_miles = 55
+
+# 2) Convert my_trip_miles to kilometers by calling the function above
+my_trip_km = convert_distance (my_trip_miles)
+
+# 3) Fill in the blank to print the result of the conversion
+print("The distance in kilometers is " + str(my_trip_km))
+
+# 4) Calculate the round-trip in kilometers by doubling the result,
+#    and fill in the blank to print the result
+print("The round-trip in kilometers is " + str(my_trip_km) * 2)
+
+
+'''This function compares two numbers and returns them in increasing order.
+
+    Fill in the blanks, so the print statement displays the result of the function call in order.
+
+Hint: if a function returns multiple values, don't forget to store these values in multiple variables'''
+
+
+
+# This function compares two numbers and returns them
+# in increasing order.
+def order_numbers(number1, number2):
+	if number2 > number1:
+		return number1, number2
+	else:
+		return number2, number1
+
+# 1) Fill in the blanks so the print statement displays the result
+#    of the function call
+smaller, bigger = order_numbers(100, 99)
+print(smaller, bigger)
+
+
+'''Let's revisit our lucky_number function. We want to change it, so that instead of printing the message, it returns the message. This way, the calling line can print the message, or do something else with it if needed. Fill in the blanks to complete the code to make it work.'''
+
+
+
+def lucky_number(name):
+  number = len(name) * 9
+  message = "Hello " + name + ". Your lucky number is " + str(number)
+  return message
+	    
+print(lucky_number("Kay"))
+print(lucky_number("Cameron"))
+  
+
 
